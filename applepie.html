@@ -9,6 +9,24 @@
     <meta name="description" content="Store front for Bethany's Pie Shop">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <script>
+
+        function save() {
+            localStorage.setItem("applepie", true);
+        }
+
+        window.onload = function () {
+            var favorite = document.getElementById('favorite');
+            if (window.localStorage) {
+                var storage = window.localStorage;
+                if (storage.getItem('applepie') == 'true') {
+                    favorite.innerHTML = "Apple pie is one of your favorites";
+                }
+            }
+        }
+    </script>
+
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
@@ -112,10 +130,13 @@
                     <h1 style="font-size:35px;color:#a593c2">Apple pie</h1>
                 </header>
                 <figure>
-                    <a href="images/products/applepie.jpg"><img src="images/products/applepie.jpg" width="600" alt="Apple pie" /></a>
+                    <a href="images/products/applepie.jpg"><img src="images/products/applepie.jpg" width="600"
+                            alt="Apple pie" /></a>
                     <figcaption>Our world-famous apple pie</figcaption>
                 </figure>
 
+                <button onclick="save()" type="button">Save as favorite</button>
+                <span id="favorite"></span>
 
                 <div style="background-color:#f8f4f1;">
                     <strong>Price: $12.95</strong>
@@ -198,7 +219,7 @@
 
             </article>
 
-          
+           
         </main>
         <footer>
             <p>Our address is <address>Bethany's Pie Shop - Bakery Street 555 Brussels Belgium</address>
