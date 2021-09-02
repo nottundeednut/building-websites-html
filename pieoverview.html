@@ -1,14 +1,17 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Welcome to Bethany's Pie Shop!</title>
+    <title>Welcome to Bethany' Pie Shop!</title>
     <meta name="author" content="Bethany's Pie Shop">
     <meta name="description" content="Store front for Bethany's Pie Shop">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
     <style>
         body {
             margin-top: 0px;
@@ -16,17 +19,11 @@
             margin-left: auto;
             margin-right: auto;
             background-color: #e6e4d9;
-            background-image: url(images/pattern.png);
+            background-image: url('images/pattern.png');
         }
 
         #mainheader {
             background-color: #a593c2;
-        }
-
-        nav {
-            height: 60px;
-            width: 1000px;
-            margin: 0 auto 20px;
         }
 
         #leftmenu {
@@ -35,8 +32,14 @@
             margin-bottom: 20px;
         }
 
+        nav {
+            height: 60px;
+            width: 1000px;
+            margin: 0 auto 20px;
+        }
+
         .searchbox {
-            width: 5px;
+            padding: 5px;
             margin: 10px 10px;
             width: 200px;
         }
@@ -64,10 +67,29 @@
         }
 
         table,
-        td {
+        td,
+        th {
             border: 1px solid black;
             border-collapse: collapse;
             padding: 5px;
+        }
+        nav>ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav>ul>li {
+            float: left;
+        }
+
+        nav>ul>li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -75,27 +97,38 @@
 <body>
     <header id="mainheader">
         <nav>
-            <!-- <img src="images/pie.png" height="55" alt=""> -->
-            <img src="images/cake.svg" height="55" alt="">
+            <ul>
+                <li><img src="images/cake.svg" height="55" /></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pieoverview.html">All pies</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div style="width: 1000px; margin-left: auto; margin-right: auto;">
+    <div style="width:1000px;margin-left: auto;margin-right: auto;">
         <aside id="leftmenu">
-            <img src="images/bethanylogo.png" alt="">
+            <a href="index.html"><img src="images/bethanylogo.png" /></a>
             <header>
                 <h4 style="text-align: center;">Browse our pies</h4>
             </header>
-            <input type="search" class="searchbox" placeholder="Search our store">
-        </aside>
+            <ul>
+                <li><a href="pieoverview.html">All pies</a></li>
+                <li><a href="cheesecakes.html">Cheese cakes</a></li>
+                <li><a href="fruitpies.html">Fruit pies</a></li>
+                <li><a href="seasonalpies.html">Seasonal pies</a></li>
+            </ul>
+            <input type="search" class="searchbox" placeholder="Search our store" />
 
+        </aside>
         <main id="main">
-            <table border="1">
-                <caption>Our selection of delicious pies for you to enjoy</caption>
+            <table >
+                <caption>
+                    Our delicious selection of pies for you to enjoy!
+                </caption>
                 <thead>
                     <tr>
-                        <th>Images</th>
-                        <th>Pies</th>
+                        <th>Image</th>
+                        <th>Pie name</th>
                         <th>Description</th>
                         <th>Price</th>
                         <th>Details</th>
@@ -103,21 +136,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="images/products/cheesecakesmall.jpg" width="100" alt=""></td>
+                        <td><img src="images/products/cheesecakesmall.jpg" width="100"></td>
                         <td>Cheese cake</td>
-                        <td>Plain Cheese cake. Plain pleasure</td>
+                        <td>Plain cheese cake. Plain pleasure.</td>
                         <td>$12.95</td>
                         <td>View details</td>
                     </tr>
-
                     <tr>
-                        <td><img src="images/products/applepiesmall.jpg" width="100" alt=""></td>
+                        <td><img src="images/products/applepiesmall.jpg" width="100"></td>
                         <td>Apple pie</td>
                         <td>Our famous apple pie</td>
                         <td>$14.95</td>
-                        <td>View details</td>
+                        <td><a href="applepie.html" target="_blank">View details</a></td>
                     </tr>
-
                     <tr>
                         <td><img src="images/products/cranberrypiesmall.jpg" width="100"></td>
                         <td>Cranberry pie</td>
@@ -183,12 +214,13 @@
                     </tr>
                 </tbody>
             </table>
+
+           
         </main>
         <footer>
-            <p>Our address is
-            <address>Bethany"s Pie Shop - Bakery street 555 Brussels Belgium </address>
+            <p>Our address is <address>Bethany's Pie Shop - Bakery Street 555 Brussels Belgium</address>
             </p>
-            <small>2020 Betany's Pie Shop. All rights reserved</small>
+            <small>2020 Bethany's Pie Shop - All rights reserved</small>
         </footer>
     </div>
 
